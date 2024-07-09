@@ -46,6 +46,8 @@ const Header = ({ children }) => {
   const headRef = useRef();
 
   useEffect(() => {
+    const currentHeadRef = headRef.current;
+
     const handleScroll = () => {
       const scrollValue = headRef?.current?.scrollTop;
       // 현재의 header의 scrollTop 값
@@ -53,10 +55,10 @@ const Header = ({ children }) => {
       // scrollTop값이 0이 아닐 경우가 true, 아니면 false.
     };
 
-    headRef?.current?.addEventListener('scroll', handleScroll);
+    currentHeadRef?.current?.addEventListener('scroll', handleScroll);
     // scroll 될 때 handleScroll을 header 태그에 이벤트로 등록
     return () => {
-      headRef?.current?.removeEventListener('scroll', handleScroll);
+      currentHeadRef?.current?.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
