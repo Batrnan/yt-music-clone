@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { dummyPlaylistArray } from '@/lib/dummyData';
-import PlayListNav from '@/components/elements/PlaylistNav';
+import PlayListNav from '@/components/elements/PlayListNav';
 
 const Navigator = () => {
   const pathname = usePathname();
